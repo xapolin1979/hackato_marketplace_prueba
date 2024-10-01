@@ -1,0 +1,133 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+}
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  
+}
+nav h3{
+  margin-left: 30px ;
+  font-weight: bolder;
+}
+.container{
+    height: 80vh;
+   
+}
+.row{
+   width: 70%;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.actividades1{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+.actividades2{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   border-left: 2px dashed rgb(29, 29, 29);
+ 
+}
+.variosbtns{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.btns{
+padding: 5px 10px;
+margin: 5px;
+border-radius: 50px !important;
+border:none;
+background-color: rgb(246, 246, 248);
+}
+.btns:hover{
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 50px !important;
+    border:none;
+    background-color: rgb(122, 81, 232);
+    color:white;
+    }
+
+    .card1{
+        width: 250px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        
+    }
+    .card1 h4{
+        text-align: center;
+        color:rgb(29, 29, 29);
+      
+    }
+    .imagen{
+        width: 100%;
+        height: 250px;
+       background-image: url(./img/dibujo_hack.png);
+       background-size: cover;
+       background-position: center;
+    }
+  .btnGenerar{
+    padding: 8px 30px;
+    border:none;
+    border-radius: 15px;
+    background-color: rgb(29, 29, 29);
+    color:white
+  }
+  .text{
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .text p{
+    text-align: center;
+  }
+@media (max-width: 990px) {
+    .container{
+        height: auto;
+
+    }
+    .row{
+        width: 100%;
+       
+     }
+
+     .actividades2{
+     height: 200px;
+       border-left: none;
+     
+    }
+  
+  }
