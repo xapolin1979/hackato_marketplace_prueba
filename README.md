@@ -11,4 +11,4 @@ No se requieren instalaciones adicionales. Solo necesitas clonar este repositori
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/tuapp.git
+   https://github.com/xapolin1979/hackato_marketplace_prueba.git
