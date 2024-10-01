@@ -13,9 +13,9 @@ nav {
   justify-content: start;
   align-items: center;
 }
-nav h3 {
+nav img {
   margin-left: 30px;
-  font-weight: bolder;
+  
 }
 .container {
   height: 80vh;
