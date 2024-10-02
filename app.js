@@ -20,6 +20,7 @@ const tipoActividad = (actividad) => {
       // Comprobamos el contenido
       if (data.contents) {
         try {
+          console.log(data.contents);
           const parsedData = JSON.parse(data.contents);
           // Comprobamos que hay actividades
           if (parsedData.length > 0) {
