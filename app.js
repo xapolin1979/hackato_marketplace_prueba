@@ -5,10 +5,10 @@ let randomIndex;
 
 // Peticiones API
 const tipoActividad = (actividad) => {
-  const proxyUrl = "https://api.allorigins.win/get?url=";
+  const proxyUrl = "https://api.codetabs.com/v1/proxy?quest=";
   const url = `https://bored-api.appbrewery.com/filter?type=${actividad}`;
 
-  fetch(proxyUrl + encodeURIComponent(url))
+  fetch(proxyUrl + url)
     .then((response) => {
       // Verificamos si la respuesta es exitosa
       if (!response.ok) {
@@ -18,24 +18,13 @@ const tipoActividad = (actividad) => {
     })
     .then((data) => {
       // Comprobamos el contenido
-      if (data.contents) {
-        try {
-          console.log(data.contents);
-          const parsedData = JSON.parse(data.contents);
-          // Comprobamos que hay actividades
-          if (parsedData.length > 0) {
-            randomIndex = Math.floor(Math.random() * parsedData.length);
-            randomValue = parsedData[randomIndex];
-            actividadAleatoria.textContent = randomValue.activity;
-            console.log(randomValue.activity);
-          } else {
-            console.error("No se encontraron actividades");
-          }
-        } catch (error) {
-          console.error("Error al parsear los datos:", error);
-        }
+      if (data && data.length > 0) {
+        randomIndex = Math.floor(Math.random() * data.length);
+        randomValue = data[randomIndex];
+        actividadAleatoria.textContent = randomValue.activity;
+        console.log(randomValue.activity);
       } else {
-        console.error("Respuesta de la API no contiene datos válidos");
+        console.error("No se encontraron actividades");
       }
     })
     .catch((error) => {
@@ -44,10 +33,10 @@ const tipoActividad = (actividad) => {
 };
 
 const actividadesAleatorias = () => {
-  const proxyUrl = "https://api.allorigins.win/get?url=";
+  const proxyUrl = "https://api.codetabs.com/v1/proxy?quest=";
   const url = `https://bored-api.appbrewery.com/random?timestamp=${new Date().getTime()}`;
 
-  fetch(proxyUrl + encodeURIComponent(url))
+  fetch(proxyUrl + url)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error en la respuesta de la API");
@@ -55,14 +44,9 @@ const actividadesAleatorias = () => {
       return response.json();
     })
     .then((data) => {
-      if (data.contents) {
-        try {
-          const parsedData = JSON.parse(data.contents);
-          actividadAleatoria.textContent = parsedData.activity;
-          console.log("Contenido parseado:", parsedData);
-        } catch (error) {
-          console.error("Error al parsear los datos:", error);
-        }
+      if (data) {
+        actividadAleatoria.textContent = data.activity;
+        console.log("Actividad aleatoria:", data.activity);
       } else {
         console.error("Respuesta de la API no contiene datos válidos");
       }
